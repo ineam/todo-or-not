@@ -3,7 +3,7 @@ import {Todo} from '../../types/todo.type';
 
 @Component({
   selector: 'amk-todos',
-  styleUrls: ['./tweets.component.scss'],
+  styleUrls: ['./todos.component.scss'],
   template: `
     <h1>Todos</h1>
     <input type="text"
@@ -26,7 +26,7 @@ import {Todo} from '../../types/todo.type';
     </table>
   `
 })
-export class TweetsComponent {
+export class TodosComponent {
   @Input() todos!: Todo[] | null;
   @Output() pinTodo = new EventEmitter<number>();
   @Output() remove = new EventEmitter<number>();

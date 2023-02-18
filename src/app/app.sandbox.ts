@@ -1,8 +1,6 @@
 import {Injectable} from '@angular/core';
 import {mapTo, Observable, tap} from 'rxjs';
-import {Tweet} from './types/tweet.type';
 import {Select, Store} from '@ngxs/store';
-import {TweetState} from '../state-management/tweet/state';
 import {TodoState} from '../state-management/todo/state';
 import {Todo} from './types/todo.type';
 import {TodoService} from './services/todo.service';
@@ -17,7 +15,6 @@ import Pin = TodoActions.Pin;
 })
 export class AppSandbox {
   @Select(TodoState) todos$!: Observable<Todo[]>;
-  @Select(TweetState) tweets$!: Observable<Tweet[]>;
 
   constructor(private store: Store,
               private todoService: TodoService) {
