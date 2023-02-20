@@ -4,13 +4,11 @@ import {Component, EventEmitter, Output} from '@angular/core';
   selector: 'amk-topbar',
   styleUrls: ['./topbar.component.scss'],
   template: `
-    <div class="container-fluid">
-      <h1>Create a new todo</h1>
-      <div class="container">
-        <input class="post-wrapper" [(ngModel)]="description"/>
-        <button class="btn btn-primary" (click)="post()">New</button>
-      </div>
-    </div>
+    <h1>Create a new todo</h1>
+    <section>
+      <input class="nes-input" [(ngModel)]="description"/>
+      <button class="nes-btn is-primary" (click)="post()">New</button>
+    </section>
   `
 })
 export class TopbarComponent {
