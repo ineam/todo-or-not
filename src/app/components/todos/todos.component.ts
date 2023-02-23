@@ -15,8 +15,8 @@ import {Todo} from '../../types/todo.type';
         <td>{{todo.id}}</td>
         <td>{{todo.description}}</td>
         <td>
-          <button *ngIf="todo.pinned" (click)="pinTodo.emit(todo.id)">❤️</button>
-          <button *ngIf="!todo.pinned" (click)="pinTodo.emit(todo.id)">🤍</button>
+          <button *ngIf="todo.pinned" (click)="pinTodo.emit(todo.id)">📌️</button>
+          <button *ngIf="!todo.pinned" (click)="pinTodo.emit(todo.id)">🧷</button>
         </td>
         <td>
           <button (click)="remove.emit(todo.id)">❌</button>

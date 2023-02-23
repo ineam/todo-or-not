@@ -5,7 +5,7 @@ import {Todo} from '../../types/todo.type';
   selector: 'amk-sidebar',
   styleUrls: ['./sidebar.component.scss'],
   template: `
-    <h1>Liked</h1>
+    <h1>Pinned</h1>
 
     <table>
       <tbody>
