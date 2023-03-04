@@ -7,12 +7,14 @@ import {Todo} from '../../types/todo.type';
   template: `
     <h1>Todos</h1>
     <input type="text"
+           class="nes-input"
            placeholder="search"
            (keyup)="toSearch($event)"/>
     <table>
       <tbody>
-      <tr *ngFor="let todo of todos">
-        <td>{{todo.id}}</td>
+      <tr *ngFor="let todo of todos"
+          class="nes-balloon">
+        <td>{{todo.id}}- </td>
         <td>{{todo.description}}</td>
         <td>
           <button *ngIf="todo.pinned" (click)="pinTodo.emit(todo.id)">📌️</button>

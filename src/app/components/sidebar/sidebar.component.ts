@@ -9,8 +9,8 @@ import {Todo} from '../../types/todo.type';
 
     <table>
       <tbody>
-      <tr *ngFor="let todo of todos">
-        <td>{{todo.id}}</td>
+      <tr *ngFor="let todo of todos" class="nes-balloon">
+        <td>{{todo.id}}- </td>
         <td>{{todo.description}}</td>
       </tr>
       </tbody>
