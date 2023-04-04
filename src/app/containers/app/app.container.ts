@@ -21,9 +21,9 @@ import {Todo} from '../../types/todo.type';
   `
 })
 export class AppContainer implements OnInit {
-  todo$: Observable<Todo[]> = this.sb.todos$;
+  todos$: Observable<Todo[]> = this.sb.todos$;
 
-  pinnedTodos$: Observable<Todo[]> = this.todo$.pipe(
+  pinnedTodos$: Observable<Todo[]> = this.todos$.pipe(
     map((todos: Todo[]) => todos.filter(todo => todo.pinned))
   );
   search$: BehaviorSubject<string> = new BehaviorSubject('');
@@ -31,7 +31,7 @@ export class AppContainer implements OnInit {
     debounceTime(200),
     distinctUntilChanged()
   );
-  filteredTodos$: Observable<Todo[]> = combineLatest([this.optimizedTerm$, this.todo$],
+  filteredTodos$: Observable<Todo[]> = combineLatest([this.optimizedTerm$, this.todos$],
     (search: string, todos: Todo[]) => {
       return todos.filter((todo: Todo) => todo.description.includes(search));
     }

@@ -1,7 +1,8 @@
-import {Injectable} from "@angular/core";
-import {Action, State, StateContext} from "@ngxs/store";
-import {Todo} from "../../app/types/todo.type";
-import {TodoActions} from "./actions";
+import {Injectable} from '@angular/core';
+import {Action, State, StateContext} from '@ngxs/store';
+import {Todo} from '../../app/types/todo.type';
+import {TodoActions} from './actions';
+
 import FetchAll = TodoActions.FetchAll;
 import Add = TodoActions.Add;
 import Remove = TodoActions.Remove;
@@ -30,8 +31,8 @@ export class TodoState {
 
   @Action(Pin)
   pinTodo({setState, getState}: StateContext<Todo[]>, action: Pin): void {
-    setState(
-      [...getState().map(todo => todo.id === action.todoId ? {...todo, pinned: !todo.pinned} : todo)]
-    );
+    setState([...getState().map(
+      todo => todo.id === action.todoId ? {...todo, pinned: !todo.pinned} : todo
+    )]);
   }
 }
